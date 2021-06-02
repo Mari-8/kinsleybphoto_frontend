@@ -21,3 +21,33 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+import React, { Component } from 'react'
+
+class App extends Component {
+
+  state = {
+    photoshoots: []
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.photoshoots.map(shoot => shoot.name)}
+      </div>
+    )
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3001/photoshoots')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          photoshoots: data.photoshoots
+        })
+      })
+  }
+}
+
+export default App 
