@@ -1,6 +1,22 @@
 .App {
   text-align: center;
 }
+.nav-content {
+  text-align: center;
+  width: 100%;
+  padding-left: 380px;
+}
+
+.jumbo-1 {
+  background-image: url('./pictures/kinney_chair.JPG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 750px;
+}
+
+.line-nav {
+  border-top: 3px double #8c8b8b;
+}
 
 .App-logo {
   height: 40vmin;
