@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/container'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+
 
 export default class HomePage extends Component {
 
