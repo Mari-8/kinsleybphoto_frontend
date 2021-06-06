@@ -2,10 +2,57 @@
   text-align: center;
 }
 .nav-content {
+  margin: 0 auto;
   text-align: center;
   width: 100%;
-  padding-left: 380px;
+  padding-left: 400px;
 }
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -650%);
+  text-align: center;
+}
+
+.galleries-container {
+  padding-left: 50px;
+}
+.gallery-container {
+  height: 300px;
+  max-width: 300px;
+  padding-top: 75px;
+}
+
+.gallery-container:hover .gallery-image {
+  opacity: 0.3;
+}
+
+.gallery-text {
+  background-color: black;
+  opacity: .65;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.gallery-container:hover .middle {
+  opacity: 1;
+}
+
+.gallery-image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+
 
 .jumbo-1 {
   background-image: url('./pictures/kinney_chair.JPG');
