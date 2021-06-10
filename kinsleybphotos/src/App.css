@@ -8,6 +8,11 @@
   padding-left: 400px;
 }
 
+.schedule-calender {
+  margin: 0 auto; 
+  padding-top: 20px;
+}
+
 .middle {
   transition: .5s ease;
   opacity: 0;
@@ -17,6 +22,14 @@
   transform: translate(-50%, -650%);
   text-align: center;
 }
+
+.gallery-pics {
+  width: 1100px;
+  height: 1000px;
+  overflow-y: scroll;
+  margin: 0 auto;
+}
+
 
 .galleries-container {
   padding-left: 50px;
@@ -37,6 +50,10 @@
   color: white;
   font-size: 16px;
   padding: 16px 32px;
+}
+
+.gallery-text:hover {
+  cursor: pointer;
 }
 
 .gallery-container:hover .middle {

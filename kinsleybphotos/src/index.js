@@ -8,17 +8,24 @@ import GalleriesPage from '../src/containers/GalleriesPage'
 import BookingPage from '../src/containers/BookingPage' 
 import AboutMePage from '../src/containers/AboutMePage'
 import Navigation from '../src/components/Navigation'
-
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers/rootReducer'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+let store = createStore(rootReducer, applyMiddleware(thunk))
+
 ReactDOM.render((
-  <Router>
-    <Navigation /> 
-          <Route exact path='/' component={HomePage} /> 
-          <Route exapt path='/galleries' component={GalleriesPage} />
-          <Route exact path='/booking' component={BookingPage} /> 
-          <Route exact path='/about' component={AboutMePage} /> 
-  </Router>),
+  <Provider store={store}>
+    <Router>
+      <Navigation /> 
+            <Route exact path='/' component={HomePage} /> 
+            <Route exapt path='/galleries' component={GalleriesPage} />
+           <Route exact path='/booking' component={BookingPage} /> 
+           <Route exact path='/about' component={AboutMePage} /> 
+    </Router>
+  </Provider>),
   document.getElementById('root')
 );
 
