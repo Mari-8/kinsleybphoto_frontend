@@ -1,9 +1,10 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
 
 export default function SchedulingInfo() {
     return (
-        <>
+        <Container>
             <Card style={{ width: '18rem', height: '500px'}}>
                 <Card.Body>
                     <Card.Title>Scheduling info</Card.Title>
@@ -15,6 +16,6 @@ export default function SchedulingInfo() {
                     </Card.Text>
                 </Card.Body>
             </Card>
-        </>
+        </Container>
     )
 }

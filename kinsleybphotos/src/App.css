@@ -5,7 +5,7 @@
   margin: 0 auto;
   text-align: center;
   width: 100%;
-  padding-left: 400px;
+  padding-left: 390px;
 }
 
 .schedule-calender {
@@ -34,6 +34,7 @@
 .galleries-container {
   padding-left: 50px;
 }
+
 .gallery-container {
   height: 300px;
   max-width: 300px;
@@ -70,6 +71,12 @@
 }
 
 
+
+.booking-row {
+  background-color: khaki;
+  max-height: 300px;
+  
+}
 
 .jumbo-1 {
   background-image: url('./pictures/kinney_chair.JPG');

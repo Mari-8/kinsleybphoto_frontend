@@ -8,8 +8,8 @@ import Container from 'react-bootstrap/Container'
 export default class Navigation extends Component {
     render() {
         return (
-            <div>
-                <Container className="nav-content">
+            
+            <Container className="nav-content ">
                 <hr className="line-nav" />
                 <Navbar className="nav-content" expand="lg">
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -26,8 +26,8 @@ export default class Navigation extends Component {
                     </Navbar.Collapse>
                 </Navbar>
                 <hr className="line-nav"/>
-                </Container>
-            </div>
+            </Container>
+            
         )
     }
 }

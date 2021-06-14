@@ -20,11 +20,6 @@ function galleriesReducer(state = {
         let selectedGal = action.gallery
         return { ...state, selectedGallery: selectedGal }
           
-      case "ADD_IMAGES": 
-        console.log(action) 
-        return {...state, 
-            images: action.images
-        }
       default:
         return state;
     }

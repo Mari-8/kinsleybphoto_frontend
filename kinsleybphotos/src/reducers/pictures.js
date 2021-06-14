@@ -1,45 +1,68 @@
 
-import {
-    ADD_PICTURE_SUCCESS,
-    ADD_PICTURE_STARTED,
-    ADD_PICTURE_FAILURE
-  } from '../actions/types';
 
   const initialState = {
     loading: false,
     pictures: null,
+    galPictures: null,
     error: null
   };
 
 
-export default function picturesReducer(state = initialState, {type, payload}) {
+export default function picturesReducer(state = initialState, action)  {
 
-    switch (type) {
+    switch (action.type) {
 
-        case ADD_PICTURE_STARTED:
-            console.log(" IN ADD PICS STARTED")
+        case 'ADD_PICTURE_STARTED':
+         
             return {
                 ...state, 
                 loading: true,
-                pictures: null,
+                pictures: state.pictures,
                 error: null
             }
 
-        case ADD_PICTURE_SUCCESS:
-            console.log("IN SUCCESS")
+        case 'ADD_PICTURE_SUCCESS':
+          
             return {
                 ...state, 
                 loading: false,
                 error: null,
-                pictures: payload
+                pictures: [...state.pictures, action.payload]
             }
 
-        case ADD_PICTURE_FAILURE: 
-        console.log("IN PICTURE FAIL")
+        case 'ADD_PICTURE_FAILURE': 
+      
         return {
             ...state,
             loading: false,
-            error: payload.error
+            error: action.payload.error
+        }
+
+        case 'GALLERY_PICTURES': 
+    
+        return {
+            ...state, 
+            pictures: action.payload
+        }
+        case 'LOADING_PICTURES': 
+
+        return {
+            ...state, 
+            loading: true
+        }
+
+        case 'GAL_PICTURES_LOADED': 
+       
+        console.log(action.payload)
+        return {
+            galPictures: action.payload
+        }
+        case 'PICTURES_LOADED': 
+        
+        return {
+            ...state,
+            loading: false, 
+            pictures: action.payload.data
         }
 
         default: 
