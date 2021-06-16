@@ -4,7 +4,7 @@ const axios = require('axios').default;
 
 
 export const addPicture = ( picture ) => {
-  
+  console.log(picture)
     return (dispatch) => {
       dispatch({ type: 'ADD_PICTURE_STARTED' })
       
@@ -18,9 +18,9 @@ export const addPicture = ( picture ) => {
           dispatch({type: 'ADD_PICTURE_SUCCESS', payload: res.data});
       }, 2500);
     })
-    .catch(err => {
-      dispatch({ type: 'ADD_PICTURE_FAILURE', payload: err.message });
-    });
+    // .catch(err => {
+    //   dispatch({ type: 'ADD_PICTURE_FAILURE', payload: err.message });
+    // });
   }
 };
 

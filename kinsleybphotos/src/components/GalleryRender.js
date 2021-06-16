@@ -9,6 +9,10 @@ class GalleryRender extends Component {
         this.props.getPictures()
       }
 
+    onSelectImage = (event) => {
+        console.log(event) 
+    }
+    
     render() {
         let images = []
         
@@ -18,7 +22,7 @@ class GalleryRender extends Component {
 
         return (
             <div>
-              <Gallery  images={images} rowHeight={250}/>  
+              <Gallery  images={images} rowHeight={250} onSelectImage={ event => this.onSelectImage(event)}/>  
             </div>
         )
     }

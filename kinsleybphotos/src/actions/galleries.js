@@ -1,5 +1,5 @@
+const axios = require('axios').default;
 
-export const ADD_PICTURES = "ADD_PICTURES";
 
 export const selectGallery = gallery => {
     return {
@@ -8,11 +8,37 @@ export const selectGallery = gallery => {
     }
 }
 
-export function addImages() {
-    console.log("HERE")
+export const addGallery = (gallery) => {
+
     return (dispatch) => {
-        fetch('http://localhost:3001/galleries')
-        .then(res => res.json())
-        .then(images => console.log(images))   //dispatch({ type: 'ADD_IMAGES', images}));
-    };
+        dispatch({ type: 'ADD_GALLERY_STARTED' })
+        console.log("STARTED")
+        axios
+          .post('http://localhost:3001/galleries', {
+            gallery,
+            completed: false
+          })
+        .then(res => {
+          setTimeout(() => {
+            dispatch({type: 'ADD_GALLERY_SUCCESS', payload: res.data});
+        }, 1500);
+      })
+      .catch(err => {
+        dispatch({ type: 'ADD_GALLERY_FAILURE', payload: err.message });
+      });
+    }
 }
+export const getGalleries = () => {
+    return (dispatch) => {
+      dispatch({ type: "LOADING_GALLERIES"})
+      axios 
+        .get('http://localhost:3001/galleries')
+        .then(res => res)
+        .then(galleries => dispatch({
+          type: "GALLERIES_LOADED",
+          payload: galleries
+        }))
+        
+    }
+  }
+

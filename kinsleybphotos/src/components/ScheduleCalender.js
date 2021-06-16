@@ -1,27 +1,79 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container'
 import Calendar from 'react-calendar';
+import BookingForm from './BookingForm'
+import { connect } from 'react-redux';
+import { addPhotoshoot } from '../actions/photoshoot'
 import 'react-calendar/dist/Calendar.css';
 
 
 
-function Scheduler() {
-    const [value, onChange] = useState(new Date());
+class Scheduler extends Component {
+      state = {
+        name: "",
+        date: null,
+        time: "",
+        email: "", 
+        cell: "",
+        shootType: "",
+        locations: null, 
+        outfits: null, 
+        specifics: "",
+        formActive: false
+      }
 
 
-    renderBookingForm = () => {
-      console.log("booking form render")
-    }
+      renderBookingForm = event => {
+        let date = event
+        console.log(date)
+        this.setState({
+          formActive: true,
+          date: date
+        })
+      }
+
+      exitForm = () => {
+        this.setState({
+          formActive: false
+        })
+      }
+
+      
   
-    return (
-      <Container style={{width: '500px'}}>
-        <Calendar
-          onChange={onChange}
-          value={value}
-          onClickDay={this.renderBookingForm}
-        />
-      </Container>
-    );
-  }
+    render() {
+      if (this.state.formActive === true) { 
+        return (
+          <Container style={{width: '600px'}} className="scheduling-card">
+            <BookingForm 
+            formData={this.state}
+            handleChange={this.handleChange}
+            exitForm={this.exitForm}
+            submitForm={this.submitForm}
+            date={this.state.date}
 
-  export default Scheduler
+            />
+          </Container>
+        )
+      } else {
+        return (
+          <Container style={{width: '400px'}}>
+            {console.log(this.props)}
+            <Calendar
+              className="calender"
+              onClickDay={this.renderBookingForm}
+            />
+          </Container>
+          
+        )
+      }
+    }
+}
+
+const mapStateToProps = state => {
+  return {
+    galleries: state.galleries,
+    photoshoots: state.photoshoots
+  }
+}
+
+  export default connect(mapStateToProps, { addPhotoshoot })(Scheduler)

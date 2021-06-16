@@ -41,27 +41,30 @@ class AddPictureForm extends Component {
                 src: res.data.url, 
                 thumbnail: res.data.url, 
             })
+            setTimeout(() => {
+                this.sendDispatch()
+            }, 2500)
         })
-
-        setTimeout(() => {
-            const pictureProps = this.state
-            this.props.addPicture(pictureProps) 
-        }, 2500)
-       
-        
+ 
       }
+
+      
+    sendDispatch = () => {
+        const pictureProps = this.state
+        this.props.addPicture(pictureProps) 
+    }
       
     render() {
       
    
         return (
-            <Form onSubmit={this.handleOnSubmit}>
-                <Form.Group htmlFor=":image" name=":image" >
-                    <Form.Label>Select picture to add: </Form.Label>
-                    <Form.Control type="file" name="file" className=":image" onChange={this.handleOnChange}/>
-                </Form.Group>   
+          <Form onSubmit={this.handleOnSubmit}>
+            <Form.Group controlId="formFile" className="mb-3">
+            <Form.Label>Select photo</Form.Label>
+                <Form.Control type="file" onChange={this.handleOnChange}/>
                 <Button type="submit">Add image</Button>
-            </Form>
+            </Form.Group>
+          </Form>
         )
         
     }
