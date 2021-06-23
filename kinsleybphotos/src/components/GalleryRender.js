@@ -15,12 +15,14 @@ class GalleryRender extends Component {
     
     render() {
         let images = []
-        
-        this.props.pictures.filter(picture => picture.gallery_id === this.props.galId).map(pic => {
-        return images.push({src: pic.src, thumbnail: pic.thumbnail, thumbnailWidth: undefined, thumbnailHeight: undefined})
-        })
-
+        if (this.props.pictures) {
+            this.props.pictures.filter(picture => picture.gallery_id === this.props.galId).map(pic => {
+            return images.push({src: pic.src, thumbnail: pic.thumbnail, thumbnailWidth: undefined, thumbnailHeight: undefined})
+          })
+        }
+        console.log(images)
         return (
+          
             <div>
               <Gallery  images={images} rowHeight={250} onSelectImage={ event => this.onSelectImage(event)}/>  
             </div>

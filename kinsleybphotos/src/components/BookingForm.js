@@ -50,7 +50,7 @@ class BookingForm extends Component  {
         return (
           <Container className="booking-form-container fw-bold">
             <br/>
-            <Button onClick={this.props.exitForm} variant="outline-dark" className="exit-form-button"><BiX size={20} color="red" /></Button>
+            <Button onClick={this.props.exitForm} className="exit-form-button"><BiX size={20} color="red" /></Button>
             <Form className="booking-form" onSubmit={this.submitForm}>
                 <Form.Group >
                     <Form.Label>Name</Form.Label>

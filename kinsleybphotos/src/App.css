@@ -131,7 +131,7 @@
   background-image: url('./pictures/kinney_chair.JPG');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 750px;
+  height: 800px;
 }
 
 .jumbo-booking {
@@ -156,6 +156,15 @@
   height: 40vmin;
   pointer-events: none;
 }
+
+.footer{
+  background: black;
+  color:white;
+  height: 300px;
+}
+
+.copyright p{border-top:1px solid rgba(255,255,255,.1);} 
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

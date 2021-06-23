@@ -17,12 +17,11 @@ class GalleriesPage extends Component {
         this.props.getPictures()
     }
 
-
-    
    render() {
-   
-  
-    const getGalleries = this.props.galleries.galleries.map((gallery, index) => <Col>< GalleryBox id={index} gal={gallery} selectGal={this.props.selectGallery} /></Col>)
+
+
+        const getGalleries = this.props.galleries.galleries.map((gallery, index) => <Col>< GalleryBox id={index} gal={gallery} selectGal={this.props.selectGallery} /></Col>)
+    
 
         if (this.props.galleries.selectedGallery) {
                 return (
