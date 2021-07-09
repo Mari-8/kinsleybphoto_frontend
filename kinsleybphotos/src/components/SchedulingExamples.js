@@ -16,7 +16,7 @@ export default function SchedulingExamples() {
                     <hr className="line-nav" />
                     <Card.Text>
                         I currently do shoots on Tuesday, Thursdays, and Saturdays. You can request a day other than one of those, 
-                        but there is no garuntee I can fit it in. Once requested though, I will contact you and we can find the next available time to 
+                        but there is no garuntee I can fit it in. Once requested, I will contact you and we can find the next available time to 
                         work with!
                     </Card.Text>
                 </Card.Body>
