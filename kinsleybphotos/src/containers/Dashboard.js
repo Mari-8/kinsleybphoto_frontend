@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import LoginForm from '../components/LoginForm'
+import DashboardInfoBox from '../components/DashboardInfoBox'
 import Container from 'react-bootstrap/Container'
 
 export default class Dashboard extends Component {
@@ -7,18 +9,28 @@ export default class Dashboard extends Component {
         loggedIn: false
     }
 
+    loginAttempt = (info) => {
+        if (info.username === "kinsleybwelk" && info.password === "KinsleyAltimari8") {
+            this.setState({
+                loggedIn: true
+            })
+        } else {
+            alert("Incorrect username or password")
+        }
+    }
+
     render() {
         
         if (this.state.loggedIn) {
             return (
                 <Container>
-                    <h1>Dashboard</h1>
+                    <DashboardInfoBox />
                 </Container>
             )
         } else {
             return (
                 <Container>
-                    <h1>Login form</h1>
+                    <LoginForm submitLogin={this.loginAttempt} /> 
                 </Container>
             )
         }
