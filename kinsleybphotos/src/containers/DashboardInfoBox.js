@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AddPhotoBox from '../components/AddPhotoBox'
+import ManageBookings from '../components/ManageBookings'
 import { connect } from 'react-redux';
 
 class DashboardInfoBox extends Component {
@@ -15,6 +16,7 @@ class DashboardInfoBox extends Component {
                     <div className="col">
                         <br/>
                         <h2>Manage Bookings</h2>
+                        <ManageBookings /> 
                     </div>
                 </div>
             </div>
