@@ -8,7 +8,8 @@ import { BiX } from "react-icons/bi";
 class BookingList extends Component {
 
     state = {
-        toggleList: false
+        toggleList: false,
+        searchValue: ""
     }
 
     getPhotoshoots = () => {
@@ -19,6 +20,13 @@ class BookingList extends Component {
             })
         }, 2500)
     }
+
+    searchBookings = (event) => {
+        this.setState({
+            searchValue: event.target.value
+        })
+
+    }
     
     deleteShoot = event => {
         let shootId = event.target.id
@@ -26,11 +34,12 @@ class BookingList extends Component {
     }
     
     render() {
-        console.log(this.props)
 
         if (this.state.toggleList === false) {
             return (
                 <Container className="booking-list-container text-center">
+                    {/* <Button onClick={this.props.exitList} className="exit-form-button"><BiX size={20} color="red" /></Button> */}
+                    <br/>
                     <Button variant="outline-dark"  onClick={this.getPhotoshoots}>Get photoshoots</Button>
                     
                 </Container>
@@ -38,8 +47,9 @@ class BookingList extends Component {
         } else {
             return (
                 <Container className="booking-list-container text-center">
-                    <ul className="top-padding">
-                        {this.props.photoshoots.photoshoots.data.data.map(shoot => <li>{shoot.attributes.name}<Button variant="outline-dark" id={shoot.id} onClick={event => this.deleteShoot(event)}><BiX size={15} color="red" /></Button></li>)}
+                    <br/>
+                    <ul className="top-padding photoshoot-list">
+                        {this.props.photoshoots.photoshoots.data.data.map(shoot => <div>{shoot.attributes.name}<Button variant="outline-dark" id={shoot.id} onClick={event => this.deleteShoot(event)}><BiX size={15} color="red" /></Button></div>)}
                     </ul>
                 </Container>
             )
