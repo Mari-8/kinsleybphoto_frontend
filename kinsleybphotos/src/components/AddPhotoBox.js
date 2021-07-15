@@ -16,7 +16,7 @@ export default class AddPhotoBox extends Component {
         }
 
         listGalleries = () => {
-            return this.props.galleries.galleries.map(gal => <li id={gal.id} className="list-blocks">{gal.title}<Button className="check-buttons" type="radio" onClick={() => this.setSelected(gal.id)} /></li>)
+            return this.props.galleries.galleries.map(gal => <div id={gal.id} className="list-blocks">{gal.title}<Button className="check-buttons" type="radio" onClick={() => this.setSelected(gal.id)} /></div>)
         }
 
         goBack = () => {
