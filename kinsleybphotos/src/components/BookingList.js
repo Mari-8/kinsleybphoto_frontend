@@ -47,9 +47,8 @@ class BookingList extends Component {
         } else {
             return (
                 <Container className="booking-list-container text-center">
-                    <br/>
-                    <ul className="top-padding photoshoot-list">
-                        {this.props.photoshoots.photoshoots.data.data.map(shoot => <div>{shoot.attributes.name}<Button variant="outline-dark" id={shoot.id} onClick={event => this.deleteShoot(event)}><BiX size={15} color="red" /></Button></div>)}
+                    <ul className="photoshoot-list">
+                        {this.props.photoshoots.photoshoots.data.data.map(shoot => <div>{shoot.attributes.name}<Button className="mx-3" variant="outline-dark" id={shoot.id} onClick={event => this.deleteShoot(event)}><BiX size={15} color="red" /></Button></div>)}
                     </ul>
                 </Container>
             )
