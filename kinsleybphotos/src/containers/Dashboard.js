@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import LoginForm from '../components/LoginForm'
-import DashboardInfoBox from '../components/DashboardInfoBox'
+import DashboardInfoBox from './DashboardInfoBox'
 import Container from 'react-bootstrap/Container'
 
 export default class Dashboard extends Component {
     
     state = {
-        loggedIn: false
+        loggedIn: true
     }
 
     loginAttempt = (info) => {
@@ -19,12 +19,18 @@ export default class Dashboard extends Component {
         }
     }
 
+    logout = () => {
+        this.setState({
+            loggedIn: false
+        })
+    }
+
     render() {
         
         if (this.state.loggedIn) {
             return (
                 <Container>
-                    <DashboardInfoBox />
+                    <DashboardInfoBox logout={this.logout} />
                 </Container>
             )
         } else {
