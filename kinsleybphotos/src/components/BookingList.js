@@ -27,6 +27,7 @@ class BookingList extends Component {
         })
 
     }
+<<<<<<< HEAD
 
     filterResult = (event) => {
         event.preventDefault()
@@ -34,6 +35,8 @@ class BookingList extends Component {
         return this.props.photoshoots.photoshoots.data.data.filter(shoot => shoot.attributes.name === this.state.searchValue)
     }
 
+=======
+>>>>>>> 9b3d4060449852dfac92b5e9acfa57e84b1aa4d3
     
     deleteShoot = event => {
         let shootId = event.target.id
@@ -45,9 +48,14 @@ class BookingList extends Component {
         if (this.state.toggleList === false) {
             return (
                 <Container className="booking-list-container text-center">
+<<<<<<< HEAD
                     <br/>
                     <Button onClick={this.props.exitList} className="exit-form-button"><BiX size={20} color="red" /></Button>
                     <br/><br/>
+=======
+                    {/* <Button onClick={this.props.exitList} className="exit-form-button"><BiX size={20} color="red" /></Button> */}
+                    <br/>
+>>>>>>> 9b3d4060449852dfac92b5e9acfa57e84b1aa4d3
                     <Button variant="outline-dark"  onClick={this.getPhotoshoots}>Get photoshoots</Button>
                     
                 </Container>
@@ -55,6 +63,7 @@ class BookingList extends Component {
         } else {
             return (
                 <Container className="booking-list-container text-center">
+<<<<<<< HEAD
                     <br/> 
                     <input type="text" name="search" value={this.state.searchValue} onChange={event => this.searchBookings(event)} /><br/>
                     <button type="submit" onClick={event => this.filterResult(event)}for="search">Search</button>
@@ -64,6 +73,10 @@ class BookingList extends Component {
                     <br/>
                     <ul className="top-padding">
                         {this.props.photoshoots.photoshoots.data.data.map(shoot => <li>{shoot.attributes.name}<Button variant="outline-dark" id={shoot.id} onClick={event => this.deleteShoot(event)}><BiX size={15} color="red" /></Button></li>)}
+=======
+                    <ul className="photoshoot-list">
+                        {this.props.photoshoots.photoshoots.data.data.map(shoot => <div>{shoot.attributes.name}<Button className="mx-3" variant="outline-dark" id={shoot.id} onClick={event => this.deleteShoot(event)}><BiX size={15} color="red" /></Button></div>)}
+>>>>>>> 9b3d4060449852dfac92b5e9acfa57e84b1aa4d3
                     </ul>
                 </Container>
             )
