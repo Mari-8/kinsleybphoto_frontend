@@ -11,50 +11,52 @@
         case 'ADD_PHOTOSHOOT_STARTED': 
         
         return {
-            
-            loading: true,
-            photoshoots: state.photoshoots
+            ...state, 
+            loading: true
         }
         
         case 'ADD_PHOTOSHOOT_SUCCESS': 
         
         return {
-           
+            ...state,
             loading: false,
             photoshoots: state.photoshoots.concat(action.payload)
         }
     
         case 'ADD_PHOTOSHOOT_FAILURE': 
         return {
-            
+            ...state,
             error: action.payload.error
         }
 
         case 'LOADING_PHOTOSHOOTS': 
         return {
+            ...state,
              loading: true
         }
 
         case 'PHOTOSHOOTS_LOADED': 
-        console.log("LOADED")
+        
         return {
+            ...state,
             loading: false,
             photoshoots: action.payload
         }
 
         case 'DELETING_PHOTOSHOOT': 
-        console.log("DELETING") 
+        
         return {
+            ...state,
             loading: true, 
             photoshoots: state.photoshoots
         }
 
         case 'PHOTOSHOOT_DELETED': 
-        console.log("DELETED")
-        console.log(action) 
+       
         return {
-            loading: false, 
-            photoshoots: state.photoshoots.filter(shoot => shoot.id !== action.payload)
+            ...state,
+            photoshoots: [...state.photoshoots.data.data.filter(shoot => `${shoot.id}` !== action.payload)],
+            loading: false
         }
 
         default: 

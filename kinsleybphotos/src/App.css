@@ -82,6 +82,7 @@
   content: "\2716";
 }
 
+
 .booking-form-container {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -108,7 +109,7 @@
 }
 
 .scheduling-card {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+ 
 }
 
 .about-me-image {
@@ -126,12 +127,22 @@
   height: 1700px;
 }
 
+.galleries-parent-container {
+  padding-bottom: 300px;
+}
 
 .jumbo-1 {
-  background-image: url('./pictures/kinney_chair.JPG');
+  background-image: url('./pictures/background-beachnight.JPG');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 800px;
+  height: 850px;
+}
+
+.main-text {
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: 100px;
+  padding-top: 60px;
 }
 
 .jumbo-booking {
@@ -161,6 +172,11 @@
   background: black;
   color:white;
   height: 300px;
+}
+
+.button-container-booking {
+  color: blue;
+  padding-top: 10px;
 }
 
 .copyright p{border-top:1px solid rgba(255,255,255,.1);} 

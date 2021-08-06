@@ -48,7 +48,3 @@ function galleriesReducer(state = {
 
   export default galleriesReducer
 
-  // {id: 1, imageUrl: "/assets/images/kins-portrait.png", title: "Couples"},
-  //   {id: 2, imageUrl: "/assets/images/IMG_9753.JPG", title: "Children"}, 
-  //   {id: 3, imageUrl: "/assets/images/IMG_7420.JPG", title: "Family"},
-  //   {id: 4, imageUrl: "/assets/images/IMG_1724.JPG", title: "Portraits"}

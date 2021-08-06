@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import Container from 'react-bootstrap/Container'
 import GalleryBox from '../components/GalleryBox'
 import { connect } from 'react-redux';
 import { selectGallery, getGalleries } from '../actions/galleries'
@@ -8,6 +9,7 @@ import { getPictures } from '../actions/pictures'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import GalleryRender from '../components/GalleryRender'
 import AddPictureForm from '../components/AddPictureForm'
+
 
 
 class GalleriesPage extends Component {
@@ -35,11 +37,11 @@ class GalleriesPage extends Component {
         } else {
             
             return (
-                <div className="text-center">
-                        <Row className="justify-content-md-center galleries-container">
+                <Container className="galleries-parent-container">
+                    <Row className=" galleries-container pt-6">
                         {getGalleries} 
                     </Row>
-                </div>
+                </Container>
             )
                 
             

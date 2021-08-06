@@ -17,9 +17,14 @@ export default class BookingPage extends Component {
     }
 
     toggleButtonOn = () => {
-        console.log("On")
         this.setState({
             buttonToggle: true
+        })
+    }
+
+    toggleButtonOff = () => {
+        this.setState({
+            buttonToggle: false
         })
     }
 
@@ -27,6 +32,8 @@ export default class BookingPage extends Component {
 
         if (this.state.buttonToggle === true) {
             return (
+        <>
+
             <Jumbotron className="jumbo-booking booking-background">
                 <Container className="position-absolute top-50 start-50 translate-middle top-padding">
                     <div className="row">
@@ -34,7 +41,7 @@ export default class BookingPage extends Component {
                             <SchedulingInfo />
                         </div>
                         <div className="col-5">
-                            <BookingList />
+                            <BookingList exitList={this.toggleButtonOff} />
                         </div>
                         <div className="col">
                             <SchedulingExamples />
@@ -42,12 +49,15 @@ export default class BookingPage extends Component {
                     </div>
 
                 </Container>
-                <Button variant="outline-dark position-absolute top-100 start-50 translate-middle top-padding" onClick={this.toggleButtonOn}>List bookings</Button>
+                
               </Jumbotron>
+                
+        </>
             )
         } else {
             return (
               <Jumbotron className="jumbo-booking booking-background">
+                  <Button variant="outline-dark" className="position-absolute top-100 start-50 translate-middle top-padding" onClick={this.toggleButtonOn}>List bookings</Button>
                 <Container className="position-absolute top-50 start-50 translate-middle top-padding">
                     <div className="row">
                          <div className="col">
@@ -57,12 +67,12 @@ export default class BookingPage extends Component {
                             <Scheduler />
                         </div>
                         <div className="col">
-                            <SchedulingExamples />
+                            <SchedulingExamples className="examples"/>
                         </div>
                     </div>
 
                 </Container>
-                <Button variant="outline-dark" className="position-absolute top-100 start-50 translate-middle top-padding" onClick={this.toggleButtonOn}>List bookings</Button>
+               
               </Jumbotron>
             )
         }

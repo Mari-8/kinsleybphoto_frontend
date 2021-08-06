@@ -43,7 +43,7 @@ class Scheduler extends Component {
     render() {
       if (this.state.formActive === true) { 
         return (
-          <Container style={{width: '600px'}} className="scheduling-card">
+          <Container style={{width: '500px', paddingTop: '150px'}} className="scheduling-card">
             <BookingForm 
             formData={this.state}
             handleChange={this.handleChange}
@@ -57,7 +57,6 @@ class Scheduler extends Component {
       } else {
         return (
           <Container style={{width: '400px'}}>
-            {console.log(this.props)}
             <Calendar
               className="calender"
               onClickDay={this.renderBookingForm}

@@ -23,7 +23,7 @@ class App extends Component {
           <Route exact path='/booking' component={BookingPage} /> 
           <Route exact path='/about' component={AboutMePage} /> 
         <Footer/>
-    </Router>
+      </Router>
     );
   }
 }

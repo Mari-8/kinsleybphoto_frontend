@@ -26,8 +26,6 @@ class BookingForm extends Component  {
         })
       }
 
-      
-
     submitForm = event => {    
         event.preventDefault() 
 
@@ -125,6 +123,7 @@ class BookingForm extends Component  {
                     Submit
                 </Button>
             </Form>
+            <br/>
           </Container>
         )
     }

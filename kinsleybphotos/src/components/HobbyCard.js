@@ -7,7 +7,7 @@ export default function HobbyCard() {
         <div className="card mb-3" style={{"max-width": "540px;"}}>
             <div className="row g-0">
                 <div className="col-md-4">
-                    <img src="https://res.cloudinary.com/kinsleybphoto/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1623859247/B993CFCF-91F3-4406-B8A6-FA13DF532690_hykiwf.jpg" className="about-me-image" alt="..." />
+                    <img src="https://res.cloudinary.com/kinsleybphoto/image/upload/ar_1:1,c_fill,g_auto,w_1000/v1623859247/B993CFCF-91F3-4406-B8A6-FA13DF532690_hykiwf.jpg" className="about-me-image" alt="..." />
                 </div>
                 <div className="col-md-8">
                 <div className="card-body text-center">
