@@ -13,6 +13,10 @@
   padding-top: 20px;
 }
 
+.scheduling-card {
+  position: fixed;
+}
+
 .middle {
   transition: .5s ease;
   opacity: 0;
@@ -108,9 +112,6 @@
   
 }
 
-.scheduling-card {
- 
-}
 
 .about-me-image {
   height: 250px;
@@ -136,6 +137,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 850px;
+  margin-bottom: 0px;
 }
 
 .main-text {
@@ -143,6 +145,7 @@
   font-family: 'Mrs Saint Delafield', cursive;
   font-size: 100px;
   padding-top: 60px;
+  text-shadow: 3px 5px 2px #474747;
 }
 
 .jumbo-booking {
@@ -160,7 +163,7 @@
 }
 
 .line-nav {
-  border-top: 3px double #8c8b8b;
+  border-top: 3px double black;
 }
 
 .App-logo {
@@ -168,10 +171,20 @@
   pointer-events: none;
 }
 
-.footer{
+.footer {
   background: black;
   color:white;
   height: 300px;
+  margin-top: 0px;
+}
+
+.card-text {
+ margin: 0 auto;
+}
+
+.navi-item {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .button-container-booking {
@@ -201,6 +214,47 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.polaroid a {
+  background: #ffffff;
+  display: inline-block;
+  margin-top: 75px;
+  margin-bottom: 100px;
+  padding: 15px 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  -webkit-transition: all .20s linear;
+  -moz-transition: all .20s linear;
+  transition: all .20s linear;
+  z-index: 0;
+  position: relative;
+}
+
+.polaroid a:after {
+  color: #333;
+  font-size: 25px;
+  content: attr(title);
+  position: relative;
+  top: 15px;
+}
+
+.polaroid img {
+  display: block;
+  width: 250px;
+}
+
+.polaroid a:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  transform: scale(1.2);
+  z-index: 10;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
 }
 
 @keyframes App-logo-spin {
